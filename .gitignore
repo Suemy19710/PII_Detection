@@ -1,0 +1,55 @@
+# Data files
+data/
+!data/.gitkeep
+
+# Feature files and models
+notebooks/features/
+notebooks/pii_model_final/
+notebooks/pii_model_token/
+models/
+embeddings/
+
+# File types
+*.csv
+*.npy
+*.npz
+*.safetensors
+*.pkl
+*.pickle
+*.model
+*.pt
+*.pth
+*.h5
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files
+*.zip
+*.tar.gz
