@@ -1,9 +1,6 @@
 
 # Feature files and models
 notebooks/features/
-notebooks/pii_model_final/
-notebooks/pii_model_token/
-models/
 embeddings/
 
 # File types
