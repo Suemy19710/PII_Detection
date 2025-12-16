@@ -1,3 +1,4 @@
+
 import pandas as pd
 import numpy as np
 import time
@@ -36,7 +37,7 @@ def load_dataset(path):
     return df
 
 # 3. Stratified Train-Test Split    
-def stratified_split(df, text_col="clean_text", label_col="has_PII", test_size=0.2, random_state=42):
+def stratified_split(df, text_col="Text", label_col="has_PII", test_size=0.2, random_state=42):
     X = df[text_col].astype(str)
     y = df[label_col].astype(int)
 
