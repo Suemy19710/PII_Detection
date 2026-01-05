@@ -1,5 +1,20 @@
 let warningElement = null;
 let lastText = "";
+async function detectWithPython(text) {
+  try {
+    const response = await fetch("http://localhost:8000/detect", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text })
+    });
+
+    const data = await response.json();
+    return data.pii || [];
+  } catch (err) {
+    console.warn("Python API not reachable:", err);
+    return [];
+  }
+}
 
 // Create / reuse warning UI
 function showWarning(message, anchorElement) {
@@ -30,24 +45,23 @@ function hideWarning() {
   if (warningElement) warningElement.style.display = "none";
 }
 
-function checkElement(el) {
+async function checkElement(el) {
   const text = el.value || el.innerText || "";
   if (text === lastText) return;
   lastText = text;
 
-  if (!window.detectPII) {
-    console.warn("detectPII not found — detector.js not loaded?");
-    return;
-  }
+  const findings = await detectWithPython(text);
 
-  const findings = window.detectPII(text);
-  if (findings.length > 0) {
-    const msg = `⚠️ Possible PII detected: ${findings.join(", ")}. Are you sure you want to share this?`;
+  if (findings && findings.length > 0) {
+    const msg = `⚠️ Possible PII detected: ${findings
+      .map(f => f.type || JSON.stringify(f))
+      .join(", ")}. Are you sure you want to share this?`;
     showWarning(msg, el);
   } else {
     hideWarning();
   }
 }
+
 
 // Attach listeners to inputs
 function attachListeners() {
