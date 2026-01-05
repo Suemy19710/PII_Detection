@@ -1,0 +1,10 @@
+.pii-warning-banner {
+  background: #facc15;
+  color: #111827;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 999999;
+}

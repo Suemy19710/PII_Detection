@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "PII Guardian",
+  "version": "1.0",
+  "description": "Warns you before you send sensitive PII in forms and textareas.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["detector.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
