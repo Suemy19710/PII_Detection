@@ -1,3 +1,5 @@
+## This main.py run for backend extension -> run: python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 from pii_detector import detect_pii

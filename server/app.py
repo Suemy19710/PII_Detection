@@ -1,3 +1,4 @@
+## This app.py run for streamlit -> run: streamlit run app.py
 import streamlit as st
 import torch
 from parse_txt import parse_txt
