@@ -35,15 +35,3 @@ def quick_summary(entities):
         k: list(v)
         for k, v in summary.items()
     }
-
-def generate_report_json(entities):
-    report = defaultdict(list)
-
-    for e in entities:
-        report[e["type"]].append({
-            "value": e["value"],
-            "conversation": e["conversation"],
-            "timestamp": e["timestamp"]
-        })
-
-    return report
