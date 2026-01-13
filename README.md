@@ -124,51 +124,6 @@ The extension will now monitor your chatbot interactions in real-time!
 }
 ```
 
-### Endpoint: `POST /api/analyze/conversation`
-
-**ChatGPT Conversation Analysis**
-
-**Request:**
-```bash
-curl -X POST "http://localhost:8000/api/analyze/conversation" \
-  -F "file=@chatgpt_export.json"
-```
-
-**Response:**
-```json
-{
-  "total_messages": 47,
-  "pii_detections": 12,
-  "entities_by_type": {
-    "EMAIL": 3,
-    "NAME_STUDENT": 5,
-    "PHONE_NUMBER": 2,
-    "URL_PERSONAL": 2
-  },
-  "high_risk_messages": [
-    {
-      "message_id": 12,
-      "entities": ["EMAIL", "PHONE_NUMBER"]
-    }
-  ]
-}
-```
-
-### Endpoint: `GET /api/health`
-
-**Health Check**
-
-**Response:**
-```json
-{
-  "status": "healthy",
-  "model_loaded": true,
-  "supported_entities": 8
-}
-```
-
----
-
 ## 🧠 Machine Learning
 
 ### Entity Types (8 Categories)
