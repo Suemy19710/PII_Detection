@@ -63,6 +63,7 @@ streamlit run app.py
 ```
 
 The demo interface will open at **http://localhost:8501**
+Using sample_data_json/pii_conversation.json to test Upload OpenAI JSON File
 
 ### 3️⃣ Browser Extension Installation
 
