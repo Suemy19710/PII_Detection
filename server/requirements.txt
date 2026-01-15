@@ -1,2 +1,7 @@
 streamlit 
 python-dateutil
+
+torch
+transformers
+safetensors
+tensorflow

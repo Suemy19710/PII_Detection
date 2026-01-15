@@ -30,7 +30,7 @@ def get_ner_pipeline():
     global _ner
     if _ner is None:
         BASE_DIR = Path(__file__).resolve().parent.parent
-        MODEL_DIR = BASE_DIR / "notebooks" / "ner_model_2026-01-12"
+        MODEL_DIR = BASE_DIR / "notebooks" / "checkpoints" / "pii_model_2025-12-14"
 
         tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)
         model = AutoModelForTokenClassification.from_pretrained(
