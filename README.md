@@ -78,6 +78,7 @@ Using **sample_data_json/pii_conversation.json** to test Upload OpenAI JSON File
 3. Click **Load unpacked** and select the `extension/` folder
 
 4. Ensure the FastAPI backend is running
+![Project Screenshot](images/edge_tool.png)
 
 The extension will now monitor your chatbot interactions in real-time!
 
@@ -162,6 +163,8 @@ O  = Outside entity (not PII)
 - **Test F1 Score:** 0.89
 - **Accuracy:** 99.9%
 - **Average Latency:** <500ms per request
+
+![Project Screenshot](images/architecture.png)
 
 ---
 
